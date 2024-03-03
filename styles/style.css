@@ -1,0 +1,649 @@
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar */
+nav {
+  z-index: 1;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  background-color: #ffffff;
+  justify-content: space-around;
+  height: 70px;
+  align-items: center;
+  color: #eab308;
+  box-shadow: 1px 1px #888888;
+}
+
+nav .logo {
+  font-family: "Kanit", sans-serif;
+  font-size: 32px;
+  letter-spacing: 1.5px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.05rem;
+  transition: all 0.2s ease-in-out;
+  border-radius: 999px;
+}
+
+nav ul li a:hover {
+  padding: 0.5rem 1.5rem;
+  background-color: #eab308;
+  color: white;
+}
+
+/* Hamburger Dropdown Menu Navbar */
+.toggleMenu {
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  position: relative;
+}
+
+.toggleMenu span {
+  display: block;
+  height: 3px;
+  width: 28px;
+  border-radius: 3.5px;
+  transition: all 0.7s;
+  background-color: black;
+}
+
+.toggleMenu input {
+  position: absolute;
+  width: 50px;
+  height: 28px;
+  left: -11px;
+  top: -3px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+}
+
+/* Animasi Hamburger Dropdown */
+.toggleMenu span:nth-child(2) {
+  transform-origin: 0 0;
+}
+
+.toggleMenu span:last-child {
+  transform-origin: 0 100%;
+}
+
+.toggleMenu input:checked ~ span:nth-child(2) {
+  background-color: black;
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.toggleMenu input:checked ~ span:last-child {
+  background-color: black;
+  transform: rotate(-45deg) translate(-1px, 0);
+}
+
+.toggleMenu input:checked ~ span:nth-child(3) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+main .home {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-bottom: 75px;
+}
+
+main .home .home-description {
+  flex: 1 1;
+}
+
+main .home .home-description h1 {
+  font-size: 1.5rem;
+  color: #eab308;
+  line-height: 3rem;
+  letter-spacing: 0.5rem;
+}
+
+main .home .home-description h1 span {
+  display: block;
+  letter-spacing: 0;
+  font-weight: 700;
+  color: #0f172a;
+  font-size: 2.75rem;
+  line-height: 2rem;
+  margin-top: 0.25rem;
+}
+
+main .home .home-description h3 {
+  font-size: 1.25rem;
+  color: #64748b;
+  line-height: 1rem;
+}
+main .home .home-description h3 .hima {
+  color: #0f172a;
+  font-weight: 800;
+}
+main .home .home-description h3 .persia {
+  color: #0f172a;
+  font-weight: 800;
+}
+
+main .home .home-description p {
+  font-size: 1.15rem;
+  color: #64748b;
+  margin-bottom: 1.25rem;
+}
+
+main .home .home-description p .biru {
+  color: blue;
+}
+
+main .home .home-description p .bulu {
+  color: #eab308;
+}
+
+main .home .home-description button {
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  background-color: #eab308;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  border-radius: 999px;
+  transition: all 0.2s ease-in-out;
+  border: white;
+}
+
+.card-content {
+  box-shadow: 2px 4px 8px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+main .home .home-description button:hover {
+  opacity: 0.8;
+}
+
+main .home .home-image {
+  position: relative;
+  right: 0;
+  bottom: -50px;
+}
+
+main .home .home-image span {
+  position: absolute;
+  bottom: -150px;
+  z-index: -10;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.aside-card {
+  margin-top: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+
+  padding: 20px;
+}
+
+.main-content {
+  width: 75%;
+  padding: 20px;
+  gap: 1.5rem;
+}
+
+main .about h4 {
+  text-align: center;
+  color: #eab308;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 0.5rem;
+}
+
+main .about h2 {
+  text-align: center;
+  font-weight: 800;
+  font-size: 3rem;
+  color: #0f172a;
+  line-height: 0.5rem;
+}
+main .about p {
+  text-align: center;
+  color: #64748b;
+}
+
+main .about .about-jack {
+  padding: 10px;
+  font-size: 0.9rem;
+  text-align: justify;
+  color: #0f172a;
+}
+
+.jack {
+  color: #eab308;
+  font-weight: 800;
+}
+
+.content-image {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  object-position: center;
+}
+
+main .gallery {
+  padding-top: 50px;
+  line-height: 0.8rem;
+  text-align: center;
+}
+
+main .gallery h4 {
+  color: #eab308;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+main .gallery h2 {
+  font-weight: 800;
+  font-size: 3rem;
+  color: #0f172a;
+}
+
+main .gallery p {
+  color: #64748b;
+}
+
+main .card {
+  width: 40%;
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 60px;
+  justify-content: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  margin-left: 50px;
+  background-color: rgba(234, 179, 8, 0.3);
+}
+
+main .card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 20px 0px;
+}
+
+main .contact {
+  padding-top: 50px;
+  line-height: 0.8rem;
+}
+
+main .contact h4 {
+  color: #eab308;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+main .contact h2 {
+  font-weight: 800;
+  font-size: 2.75rem;
+  text-align: center;
+  color: #0f172a;
+}
+
+main .contact p {
+  color: #64748b;
+  text-align: center;
+}
+
+main .contact-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  padding-top: 25px;
+}
+
+main .label-wrapper {
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-bottom: 2rem;
+}
+
+main .label-wrapper label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #eab308;
+  text-align: left;
+}
+
+main .label-wrapper input {
+  margin-top: 10px;
+  width: 100%;
+  background-color: rgb(226 232 240);
+  padding: 0.75rem;
+  border-radius: 0.375rem;
+  border-style: solid;
+}
+
+main .label-wrapper input:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  border-color: #eab308;
+}
+
+main .label-wrapper textarea {
+  margin-top: 10px;
+  width: 100%;
+  background-color: rgb(226 232 240);
+  padding: 0.75rem;
+  border-radius: 0.375rem;
+  border-style: solid;
+  border-width: 2px;
+  height: 6rem;
+}
+
+main .label-wrapper textarea:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  border-color: #eab308;
+}
+
+main .contact-wrapper button {
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  background-color: #eab308;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  border-radius: 999px;
+  transition: all 0.2s ease-in-out;
+  border: white;
+}
+
+footer {
+  padding: 20px;
+  color: rgb(100 116 139);
+  background-color: #0f172a;
+  text-align: center;
+  font-weight: 500;
+  font-size: 0.9rem;
+  line-height: 1rem;
+}
+
+footer p .instagram {
+  font-weight: 700;
+  color: #eab308;
+  text-decoration: none;
+}
+
+footer p .html {
+  font-weight: 500;
+  color: orangered;
+}
+
+footer p .css {
+  font-weight: 500;
+  color: rgb(14 165 233);
+}
+
+aside {
+  width: 25%;
+  padding-right: 1rem;
+}
+
+aside {
+  text-align: center;
+}
+
+aside h4 {
+  color: #eab308;
+  line-height: 0.5rem;
+}
+
+aside h2 {
+  line-height: 0.8rem;
+  font-size: 1.75rem;
+}
+
+aside a {
+  text-decoration: none;
+  color: #64748b;
+  line-height: 0.8rem;
+}
+
+aside p {
+  padding: 10px;
+  font-size: 0.9rem;
+  text-align: justify;
+  color: #0f172a;
+}
+
+/* Responsive Breakpoint */
+/* Ukuran Tablet */
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  main .home-description {
+    margin-top: 30px;
+  }
+  .main-content {
+    width: 100%;
+  }
+  main .card {
+    width: 50%;
+    display: flex;
+  }
+
+  main .card-wrapper {
+    justify-content: center;
+  }
+
+  aside {
+    width: 100%;
+  }
+
+  nav {
+    width: 100%;
+  }
+  nav ul {
+    width: 50%;
+  }
+
+  main .home {
+    flex-direction: column;
+  }
+  main .home .home-description {
+    padding-top: 3rem;
+  }
+
+  main .contact-wrapper {
+    width: 90%;
+  }
+  main .contact {
+    margin-bottom: 0;
+  }
+
+  aside {
+    width: 100%;
+  }
+
+  .aside-card {
+    margin-left: 10px;
+    margin-bottom: 30px;
+  }
+  footer p {
+    font-size: 0.75rem;
+  }
+}
+
+/* Ukuran Mobile/Handphone */
+@media screen and (max-width: 576px) {
+  nav {
+    width: 100%;
+  }
+  nav ul {
+    padding: 30px;
+    position: absolute;
+    flex-direction: column;
+    right: 0;
+    top: 55px;
+    height: 40vh;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 0;
+    background-color: #ffffff;
+    box-shadow: 5px 5px 8px 5px #888888;
+    border-radius: 0 5px;
+    transform: translateX(100%);
+    transition: all 1.5s;
+    opacity: 0;
+  }
+
+  nav ul li a {
+    line-height: 3rem;
+  }
+
+  main .home {
+    z-index: 0;
+  }
+
+  main .home .home-description {
+    padding-left: 2rem;
+    padding-top: 3rem;
+    margin-top: 30px;
+  }
+  main .home .home-description h1 {
+    font-size: 1.5rem;
+  }
+  main .home .home-description h3 {
+    font-size: 1rem;
+  }
+
+  main .home .home-description p {
+    font-size: 1rem;
+  }
+
+  nav ul.swipe {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  .main-content {
+    width: 100%;
+  }
+
+  main .about h4 {
+    font-size: 1.25rem;
+  }
+
+  main .about h2 {
+    font-size: 2rem;
+  }
+
+  main .about p {
+    font-size: 0.8rem;
+  }
+
+  main .about .about-jack {
+    font-size: 0.8rem;
+  }
+
+  main .gallery h4 {
+    font-size: 1.25rem;
+  }
+
+  main .gallery h2 {
+    font-size: 2rem;
+  }
+  main .gallery p {
+    font-size: 0.9rem;
+  }
+
+  main .card {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  main .card-wrapper {
+    justify-content: center;
+    margin-right: 50px;
+  }
+
+  main .card {
+    width: 100%;
+  }
+
+  main .contact {
+    margin-bottom: 0;
+  }
+
+  main .contact h4 {
+    font-size: 1.25rem;
+  }
+
+  main .contact h2 {
+    font-size: 2rem;
+  }
+  main .contact p {
+    font-size: 0.9rem;
+  }
+
+  main .contact-wrapper {
+    width: 90%;
+  }
+
+  aside {
+    width: 100%;
+  }
+  aside p {
+    font-size: 0.8rem;
+  }
+
+  .aside-card {
+    margin-left: 10px;
+    margin-bottom: 30px;
+  }
+  .toggleMenu {
+    display: flex;
+  }
+  footer p {
+    font-size: 0.75rem;
+  }
+}
